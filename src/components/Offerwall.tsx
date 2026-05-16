@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../AuthContext';
+import { Link } from 'react-router-dom';
 import {
   Gift,
   PlayCircle,
@@ -60,6 +61,16 @@ export const Offerwall = () => {
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] p-6">
+      <div className="flex items-center justify-between mb-6">
+
+  <Link
+    to="/"
+    className="px-5 py-3 bg-black text-white rounded-2xl"
+  >
+    Back to Dashboard
+  </Link>
+
+</div>
 
       {!selectedWall && (
         <>
