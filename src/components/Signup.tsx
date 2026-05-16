@@ -63,6 +63,19 @@ export const Signup = () => {
       if (signupError) throw signupError;
       
       const newUser = data?.user;
+      if (newUser) {
+  const referralCode =
+    Math.random().toString(36).substring(2, 8).toUpperCase();
+
+  await supabase.from('profiles').insert([
+    {
+      id: newUser.id,
+      email: email,
+      referral_code: referralCode,
+      referred_by: referrerId,
+    },
+  ]);
+}
 
       if (data?.user && data?.session === null) {
         setSuccess(true);
