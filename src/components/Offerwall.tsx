@@ -86,7 +86,7 @@ const { data: completionsData, error: completionsError } = await supabase
   })
   .eq('id', user.id);
 
-await refreshProfile();
+  
 
       if (completeError) {
         if (completeError.code === '23505') {
