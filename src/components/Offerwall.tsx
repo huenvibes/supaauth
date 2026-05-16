@@ -79,12 +79,18 @@ const { data: completionsData, error: completionsError } = await supabase
           user_id: user.id,
           task_id: task.id
         });
-        await supabase
+        const newBalance = Number(profile?.balance || 0) + Number(task.reward);
+
+const { error: balanceError } = await supabase
   .from('profiles')
   .update({
-    balance: (profile?.balance || 0) + task.reward
+    balance: newBalance
   })
   .eq('id', user.id);
+
+if (balanceError) {
+  console.error('Balance update failed:', balanceError);
+}
 
   
 
