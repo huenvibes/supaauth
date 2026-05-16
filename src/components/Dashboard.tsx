@@ -228,7 +228,7 @@ export const Dashboard = () => {
                       {copied ? 'Copied' : 'Copy Link'}
                     </button>
                   </div>
-                  <p className="mt-4 text-[10px] text-[#9e9e9e]">Earn $5.00 for every friend who signs up using your link.</p>
+                  <p className="mt-4 text-[10px] text-[#9e9e9e]">Earn $0.10 for every friend who signs up using your link.</p>
                 </div>
               </div>
             </div>

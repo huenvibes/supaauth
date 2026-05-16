@@ -186,7 +186,7 @@ create table if not exists public.referrals (
   id uuid default gen_random_uuid() primary key,
   referrer_id uuid references auth.users not null,
   referred_id uuid references auth.users not null unique,
-  bonus_amount decimal(12,2) default 5.00 not null,
+  bonus_amount decimal(12,2) default 0.10 not null,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
   check (referrer_id <> referred_id) -- Prevent self-referral at DB level
 );
@@ -234,7 +234,7 @@ begin
   -- 4. If referred, log the referral record to trigger the bonus
   if referrer_id is not null then
     insert into public.referrals (referrer_id, referred_id, bonus_amount)
-    values (referrer_id, new.id, 5.00);
+    values (referrer_id, new.id, 0.10);
   end if;
 
   return new;

@@ -82,7 +82,7 @@ export const Referrals = () => {
             <span className="text-xs font-bold uppercase tracking-widest">Referral Program</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-[#1a1a1a]">Refer & Earn</h1>
-          <p className="text-[#9e9e9e] text-sm mt-1">Invite friends and earn $5.00 for every new sign-up.</p>
+          <p className="text-[#9e9e9e] text-sm mt-1">Invite friends and earn $0.10 for every new sign-up.</p>
         </div>
         <div>
            <Link to="/" className="px-5 py-2.5 bg-white border border-[#e5e5e5] rounded-xl text-sm font-semibold hover:bg-[#fcfcfc] transition-all flex items-center gap-2 shadow-sm">
@@ -206,7 +206,7 @@ export const Referrals = () => {
                 <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
                 <div>
                   <p className="text-sm font-bold text-[#1a1a1a] mb-1">Receive Reward</p>
-                  <p className="text-xs text-[#9e9e9e] leading-relaxed">Once they sign up, you'll instantly receive a $5.00 bonus to your wallet!</p>
+                  <p className="text-xs text-[#9e9e9e] leading-relaxed">Once they sign up, you'll instantly receive a $0.10 bonus to your wallet!</p>
                 </div>
               </div>
             </div>
