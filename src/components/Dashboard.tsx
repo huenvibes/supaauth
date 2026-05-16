@@ -42,8 +42,8 @@ export const Dashboard = () => {
 
   const quickActions = [
     { title: 'Earn Rewards', icon: Gift, desc: 'Complete daily tasks', path: '/offerwall' },
-    { title: 'Invite Friends', icon: Users, desc: 'Earn $5.00 per referral', path: '/referrals' },
-    { title: 'Withdraw Funds', icon: Send, desc: 'Minimum $50.00', path: '/withdraw' },
+    { title: 'Invite Friends', icon: Users, desc: 'Earn $0.10 per referral', path: '/referrals' },
+    { title: 'Withdraw Funds', icon: Send, desc: 'Minimum $1.00', path: '/withdraw' },
     { title: 'Admin Console', icon: Shield, desc: 'Balance & Payouts', path: '/admin', adminOnly: true },
     { title: 'API Access', icon: Terminal, desc: 'Manage access keys', path: '#' },
   ];
