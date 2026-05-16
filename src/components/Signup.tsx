@@ -64,8 +64,10 @@ export const Signup = () => {
       
       const newUser = data?.user;
       if (newUser) {
-  const referralCode =
-    Math.random().toString(36).substring(2, 8).toUpperCase();
+  const referralCode = email
+    .split('@')[0]
+    .substring(0, 6)
+    .toUpperCase();
 
   await supabase.from('profiles').insert([
     {
