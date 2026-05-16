@@ -14,7 +14,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <div className="flex justify-between h-16 items-center">
             <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Shield className="w-6 h-6 text-blue-600" />
-              <span className="text-xl font-semibold tracking-tight">SupaAuth</span>
+              <span className="text-xl font-semibold tracking-tight">Revonix</span>
             </Link>
             
             <div className="flex items-center gap-4">
@@ -55,7 +55,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-[#e5e5e5]">
         <p className="text-sm text-[#9e9e9e] text-center">
-          &copy; {new Date().getFullYear()} SupaAuth. All rights reserved.
+          &copy; {new Date().getFullYear()} Revonix. All rights reserved.
         </p>
       </footer>
     </div>

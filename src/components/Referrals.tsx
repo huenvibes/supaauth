@@ -199,7 +199,7 @@ export const Referrals = () => {
                 <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
                 <div>
                   <p className="text-sm font-bold text-[#1a1a1a] mb-1">They Sign Up</p>
-                  <p className="text-xs text-[#9e9e9e] leading-relaxed">Your friends use your link to create their new SupaAuth account.</p>
+                  <p className="text-xs text-[#9e9e9e] leading-relaxed">Your friends use your link to create their new Revonix account.</p>
                 </div>
               </div>
               <div className="flex gap-4">

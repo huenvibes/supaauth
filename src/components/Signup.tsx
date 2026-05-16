@@ -105,7 +105,7 @@ export const Signup = () => {
       <div className="bg-white p-8 rounded-[24px] shadow-sm border border-[#e5e5e5]">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-semibold tracking-tight mb-2">Create Account</h1>
-          <p className="text-[#9e9e9e] text-sm">Join SupaAuth today</p>
+          <p className="text-[#9e9e9e] text-sm">Join Revonix today</p>
         </div>
 
         {error && (
