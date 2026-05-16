@@ -55,7 +55,7 @@ export const Offerwall = () => {
   }, [fetchTasks]);
 
   const handleCompleteTask = async (task: Task) => {
-    if (!user || completedTaskIds.has(task.id) || claimingId) return;
+    if (!user || claimingId) return;
     
     if (profile?.is_banned) {
       alert('Your account is suspended. You cannot earn rewards.');
@@ -85,6 +85,7 @@ await refreshProfile();
       if (completeError) {
         if (completeError.code === '23505') {
             setCompletedTaskIds(prev => new Set([...Array.from(prev), task.id]));
+            await refreshProfile();
             return;
         }
         throw completeError;
