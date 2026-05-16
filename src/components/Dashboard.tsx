@@ -217,7 +217,7 @@ export const Dashboard = () => {
                 <div className="relative z-10">
                   <div className="text-[10px] font-bold uppercase tracking-widest text-[#9e9e9e] mb-2"> Your Referral Code </div>
                   <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold font-mono text-[#1a1a1a] tracking-widest">
+                    <div className="text-2xl font-bold font-mono text-[#1a1a1a] tracking-widest whitespace-normal">
                       {profile?.referral_code}
                     </div>
                     <button 
