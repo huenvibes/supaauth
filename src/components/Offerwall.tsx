@@ -105,7 +105,10 @@ if (balanceError) {
 
       // 2. Update local state
       setCompletedTaskIds(new Set([...Array.from(completedTaskIds), task.id]));
-      await refreshProfile();
+
+window.location.reload();
+
+await refreshProfile();
       
     } catch (err: any) {
       console.error('Task Completion Error:', err);
