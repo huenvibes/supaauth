@@ -32,16 +32,22 @@ export const Offerwall = () => {
     if (!user) return;
     setLoading(true);
     try {
-      const [tasksRes, completionsRes] = await Promise.all([
-        supabase.from('offerwall_tasks').select('*'),
-        supabase.from('task_completions').select('task_id').eq('user_id', user.id)
-      ]);
+      const { data: tasksData, error: tasksError } = await supabase
+  .from('offerwall_tasks')
+  .select('*');
 
-      if (tasksRes.error) console.warn('Tasks fetch failed:', tasksRes.error.message);
-      setTasks(tasksRes.data || []);
+const { data: completionsData, error: completionsError } = await supabase
+  .from('task_completions')
+  .select('*')
+  .eq('user_id', user.id);
 
-      if (completionsRes.data) {
-        setCompletedTaskIds(new Set(completionsRes.data.map((ct: any) => ct.task_id)));
+      if (tasksError) console.warn('Tasks fetch failed:', tasksRes.error.message);
+      setTasks(tasksData || []);
+
+      if (completionsData) {
+        setCompletedTaskIds(
+  new Set(completionsData.map((ct: any) => ct.task_id))
+);
       }
     } catch (err) {
       console.error('Offerwall Fetch Error:', err);
