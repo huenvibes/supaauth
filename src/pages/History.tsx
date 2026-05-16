@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { Link } from 'react-router-dom';
 
 type Transaction = {
   id?: string | number | null;
@@ -71,6 +72,12 @@ export default function History() {
       <div className="mx-auto max-w-4xl">
         <div className="rounded-3xl border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-100 px-5 py-5 sm:px-8">
+            <Link
+  to="/"
+  className="inline-flex items-center mb-4 text-sm font-medium text-blue-600 hover:underline"
+>
+  ← Back to Dashboard
+</Link>
             <h1 className="text-2xl font-semibold tracking-tight">History</h1>
             <p className="mt-1 text-sm text-slate-500">
               Your latest rewards and withdrawal activity.
