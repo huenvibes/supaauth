@@ -28,7 +28,7 @@ export const Withdrawals = () => {
   const [history, setHistory] = useState<Withdrawal[]>([]);
   const [fetchingHistory, setFetchingHistory] = useState(true);
 
-  const MIN_WITHDRAWAL = 50;
+  const MIN_WITHDRAWAL = 1;
 
   const fetchHistory = React.useCallback(async () => {
     if (!user) return;
