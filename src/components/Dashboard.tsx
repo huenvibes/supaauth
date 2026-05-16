@@ -80,9 +80,7 @@ export const Dashboard = () => {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight text-[#1a1a1a]">Dashboard</h1>
           <p className="text-[#9e9e9e] mt-1">
-            Status: <span className={profile ? "text-green-600 font-medium" : "text-amber-500 font-medium"}>
-              {profile ? "Connected" : "Loading profile..."}
-            </span>
+            Status: <span className="text-green-600 font-medium">Connected</span>
           </p>
         </div>
         <div className="flex gap-3">
