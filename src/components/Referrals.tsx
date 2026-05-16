@@ -131,7 +131,7 @@ export const Referrals = () => {
                   <label className="text-[10px] font-bold uppercase tracking-widest text-white/40 ml-1">Your Referral Code</label>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between group overflow-hidden">
                     <code className="text-lg font-bold font-mono text-white tracking-widest">
-                      {JSON.stringify(profile)}
+                      {profile?.referral_code || "NO CODE"}
                     </code>
                     <button 
                       onClick={() => {
