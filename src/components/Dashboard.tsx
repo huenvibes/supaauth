@@ -149,7 +149,7 @@ export const Dashboard = () => {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-[#1a1a1a]">{profile?.email || user?.email}</div>
-                  <div className="text-xs text-[#9e9e9e]">ID: {user?.id.substring(0, 8)}...</div>
+                  <div className="text-xs text-[#9e9e9e]">ID: {profile?.user_id}...</div>
                 </div>
               </div>
               
