@@ -66,12 +66,21 @@ export const Offerwall = () => {
     try {
       // 1. Log completion in DB
       // The database trigger 'on_task_completed' will automatically reward the user
+      if (completeError) {
       const { error: completeError } = await supabase
         .from('task_completions')
         .insert({
           user_id: user.id,
           task_id: task.id
         });
+        await supabase
+  .from('profiles')
+  .update({
+    balance: (profile?.balance || 0) + task.reward
+  })
+  .eq('id', user.id);
+
+await refreshProfile();
 
       if (completeError) {
         if (completeError.code === '23505') {
