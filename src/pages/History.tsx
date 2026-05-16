@@ -24,31 +24,49 @@ export default function History() {
   };
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">
-        Earning History
+    <div className="p-8 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold mb-8">
+        Transaction History
       </h1>
 
-      <div className="bg-white p-6 rounded-xl shadow">
-        {history.map((item, index) => (
-          <div
-            key={index}
-            className="flex justify-between mb-4 border-b pb-2"
-          >
-            <span>{item.type}</span>
+      <div className="bg-white rounded-2xl shadow p-6">
 
-            <span
-              className={
-                item.amount > 0
-                  ? 'text-green-600'
-                  : 'text-red-600'
-              }
+        {history.length === 0 ? (
+          <p className="text-gray-500 text-center">
+            No Transactions Found
+          </p>
+        ) : (
+          history.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between border-b py-4"
             >
-              {item.amount > 0 ? '+' : ''}
-              ${item.amount}
-            </span>
-          </div>
-        ))}
+              <div>
+                <h2 className="font-semibold text-lg">
+                  {item.type}
+                </h2>
+
+                <p className="text-sm text-gray-500">
+                  {new Date(
+                    item.created_at
+                  ).toLocaleDateString()}
+                </p>
+              </div>
+
+              <div
+                className={`font-bold text-lg ${
+                  item.amount > 0
+                    ? 'text-green-600'
+                    : 'text-red-600'
+                }`}
+              >
+                {item.amount > 0 ? '+' : ''}
+                ${item.amount}
+              </div>
+            </div>
+          ))
+        )}
+
       </div>
     </div>
   );
