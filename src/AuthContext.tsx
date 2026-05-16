@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         .select('id, email, balance, referral_code, referred_by, is_banned, is_admin, created_at')
         .eq('id', userId)
         .limit(1)
-        .single();
+        .maybeSingle()
 
       if (error) {
         if (error.code === 'PGRST116') {
