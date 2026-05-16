@@ -62,7 +62,7 @@ export const Referrals = () => {
     }
   };
 
-  const referralLink = `${window.location.origin}/signup?ref=${profile?.referral_code || ''}`;
+  const referralLink = `${window.location.origin}/signup?ref=${profile?.referral_code}`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(referralLink);
