@@ -11,7 +11,6 @@ import {
 export const Offerwall = () => {
   const { user } = useAuth();
   const [selectedWall, setSelectedWall] = useState('');
-  const [comingSoon, setComingSoon] = useState('');
 
   if (!user) return null;
 
@@ -57,6 +56,8 @@ export const Offerwall = () => {
     }
   ];
 
+  const selectedWallData = walls.find((wall) => wall.id === selectedWall);
+
   return (
     <div className="min-h-screen bg-[#f5f5f5] p-6">
 
@@ -77,14 +78,7 @@ export const Offerwall = () => {
             {walls.map((wall) => (
               <button
                 key={wall.id}
-                onClick={() => {
-                  if (wall.id === 'revtoo') {
-                    setSelectedWall('revtoo');
-                  } else {
-                    alert(`${wall.title} coming soon`);
-                    setComingSoon(wall.title);
-                  }
-                }}
+                onClick={() => setSelectedWall(wall.id)}
                 className="bg-white rounded-3xl p-6 border border-gray-200 hover:border-black transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-xl text-left"
               >
 
@@ -120,49 +114,6 @@ export const Offerwall = () => {
       )}
 
       {selectedWall === 'revtoo' && (
-        {comingSoon && (
-  <div className="w-full h-screen">
-
-    <div className="flex items-center justify-between mb-5">
-
-      <button
-        onClick={() => setComingSoon('')}
-        className="flex items-center gap-2 px-5 py-3 bg-black text-white rounded-2xl"
-      >
-        <ArrowLeft className="w-5 h-5" />
-        Back
-      </button>
-
-      <div>
-        <h2 className="text-2xl font-bold">
-          {comingSoon}
-        </h2>
-
-        <p className="text-gray-500 text-sm">
-          Offerwall integration coming soon
-        </p>
-      </div>
-
-    </div>
-
-    <div className="w-full h-[90vh] bg-white rounded-3xl border border-gray-200 shadow-lg flex items-center justify-center">
-
-      <div className="text-center">
-
-        <h1 className="text-5xl font-bold mb-4">
-          Coming Soon
-        </h1>
-
-        <p className="text-gray-500 text-lg">
-          This offerwall will be available soon.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-)}
         <div className="w-full h-screen">
 
           <div className="flex items-center justify-between mb-5">
@@ -199,6 +150,50 @@ export const Offerwall = () => {
               allow="clipboard-write"
             />
 
+          </div>
+
+        </div>
+      )}
+
+      {selectedWall && selectedWall !== 'revtoo' && selectedWallData && (
+        <div className="w-full h-screen">
+
+          <div className="flex items-center justify-between mb-5">
+
+            <button
+              onClick={() => setSelectedWall('')}
+              className="flex items-center gap-2 px-5 py-3 bg-black text-white rounded-2xl hover:opacity-90"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              Back
+            </button>
+
+            <div>
+              <h2 className="text-2xl font-bold">
+                {selectedWallData.title}
+              </h2>
+
+              <p className="text-gray-500 text-sm">
+                Complete offers and earn rewards
+              </p>
+            </div>
+
+          </div>
+
+          <div className="w-full h-[90vh] bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-lg flex items-center justify-center">
+            <div className="text-center px-6">
+              <div className="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mx-auto mb-4">
+                {selectedWallData.icon}
+              </div>
+
+              <h3 className="text-3xl font-bold text-[#1a1a1a]">
+                Coming Soon
+              </h3>
+
+              <p className="text-gray-500 mt-3 max-w-md">
+                {selectedWallData.title} is not available yet. Check back soon for more earning options.
+              </p>
+            </div>
           </div>
 
         </div>
