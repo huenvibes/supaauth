@@ -14,6 +14,7 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { Offerwall } from './components/Offerwall';
 import { Referrals } from './components/Referrals';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import History from './pages/History';
 
 export default function App() {
   return (
@@ -61,6 +62,14 @@ export default function App() {
                 </ProtectedRoute>
               } 
             />
+            <Route
+  path="/history"
+  element={
+    <ProtectedRoute>
+      <History />
+    </ProtectedRoute>
+  }
+/>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<Navigate to="/" replace />} />
