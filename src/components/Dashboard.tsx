@@ -45,7 +45,7 @@ export const Dashboard = () => {
     { title: 'Invite Friends', icon: Users, desc: 'Earn $0.10 per referral', path: '/referrals' },
     { title: 'Withdraw Funds', icon: Send, desc: 'Minimum $1.00', path: '/withdraw' },
     { title: 'Admin Console', icon: Shield, desc: 'Balance & Payouts', path: '/admin', adminOnly: true },
-    { title: 'API Access', icon: Terminal, desc: 'Manage access keys', path: '#' },
+    { title: 'History', icon: Terminal, desc: 'View earning history', path: '/history' },
   ];
 
   const visibleActions = quickActions.filter(a => {
