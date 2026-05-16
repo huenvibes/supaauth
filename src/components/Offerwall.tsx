@@ -11,6 +11,7 @@ import {
 export const Offerwall = () => {
   const { user } = useAuth();
   const [selectedWall, setSelectedWall] = useState('');
+  const [comingSoon, setComingSoon] = useState('');
 
   if (!user) return null;
 
@@ -81,6 +82,7 @@ export const Offerwall = () => {
                     setSelectedWall('revtoo');
                   } else {
                     alert(`${wall.title} coming soon`);
+                    setComingSoon(wall.title);
                   }
                 }}
                 className="bg-white rounded-3xl p-6 border border-gray-200 hover:border-black transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-xl text-left"
@@ -118,6 +120,49 @@ export const Offerwall = () => {
       )}
 
       {selectedWall === 'revtoo' && (
+        {comingSoon && (
+  <div className="w-full h-screen">
+
+    <div className="flex items-center justify-between mb-5">
+
+      <button
+        onClick={() => setComingSoon('')}
+        className="flex items-center gap-2 px-5 py-3 bg-black text-white rounded-2xl"
+      >
+        <ArrowLeft className="w-5 h-5" />
+        Back
+      </button>
+
+      <div>
+        <h2 className="text-2xl font-bold">
+          {comingSoon}
+        </h2>
+
+        <p className="text-gray-500 text-sm">
+          Offerwall integration coming soon
+        </p>
+      </div>
+
+    </div>
+
+    <div className="w-full h-[90vh] bg-white rounded-3xl border border-gray-200 shadow-lg flex items-center justify-center">
+
+      <div className="text-center">
+
+        <h1 className="text-5xl font-bold mb-4">
+          Coming Soon
+        </h1>
+
+        <p className="text-gray-500 text-lg">
+          This offerwall will be available soon.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
         <div className="w-full h-screen">
 
           <div className="flex items-center justify-between mb-5">
