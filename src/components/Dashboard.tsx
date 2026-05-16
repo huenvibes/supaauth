@@ -18,7 +18,7 @@ export const Dashboard = () => {
   const [copied, setCopied] = useState(false);
   
   const referralLink = React.useMemo(() => 
-    `${window.location.origin}/signup?ref=${profile?.referral_code || ''}`,
+    `${window.location.origin}/signup?ref=${profile?.referral_code}`,
     [profile?.referral_code]
   );
   
@@ -149,7 +149,7 @@ export const Dashboard = () => {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-[#1a1a1a]">{profile?.email || user?.email}</div>
-                  <div className="text-xs text-[#9e9e9e]">ID: {profile?.user_id || profile?.referral_code || ''</div>
+                  <div className="text-xs text-[#9e9e9e]">ID: {profile?.user_id || profile?.referral_code</div>
                 </div>
               </div>
               
@@ -218,7 +218,7 @@ export const Dashboard = () => {
                   <div className="text-[10px] font-bold uppercase tracking-widest text-[#9e9e9e] mb-2"> Your Referral Code </div>
                   <div className="flex items-center justify-between">
                     <div className="text-2xl font-bold font-mono text-[#1a1a1a] tracking-widest">
-                      {profile?.referral_code || ''}
+                      {profile?.referral_code}
                     </div>
                     <button 
                       onClick={copyLink}
