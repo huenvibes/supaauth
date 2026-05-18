@@ -44,7 +44,6 @@ export const Dashboard = () => {
     { title: 'Earn Rewards', icon: Gift, desc: 'Complete daily tasks', path: '/offerwall' },
     { title: 'Invite Friends', icon: Users, desc: 'Earn $0.10 per referral', path: '/referrals' },
     { title: 'Withdraw Funds', icon: Send, desc: 'Minimum $1.00', path: '/withdraw' },
-    { title: 'Admin Console', icon: Shield, desc: 'Balance & Withdrawals', path: '/admin', adminOnly: true },
     { title: 'History', icon: Terminal, desc: 'View earning history', path: '/history' },
   ];
 
