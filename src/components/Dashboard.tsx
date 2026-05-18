@@ -41,11 +41,31 @@ export const Dashboard = () => {
   }, [refreshProfile]);
 
   const quickActions = [
-    { title: 'Earn Rewards', icon: Gift, desc: 'Complete daily tasks', path: '/offerwall' },
-    { title: 'Invite Friends', icon: Users, desc: 'Earn $0.10 per referral', path: '/referrals' },
-    { title: 'Withdraw Funds', icon: Send, desc: 'Minimum $1.00', path: '/withdraw' },
-    { title: 'History', icon: Terminal, desc: 'View earning history', path: '/history' },
-  ];
+  {
+    title: 'Earn Rewards',
+    icon: Gift,
+    desc: 'Complete daily tasks',
+    path: '/offerwall'
+  },
+  {
+    title: 'Invite Friends',
+    icon: Users,
+    desc: 'Earn $0.10 per referral',
+    path: '/referrals'
+  },
+  {
+    title: 'Withdraw Funds',
+    icon: Send,
+    desc: 'Minimum $1.00',
+    path: '/withdraw'
+  },
+  {
+    title: 'History',
+    icon: Terminal,
+    desc: 'View earning history',
+    path: '/history'
+  }
+];
 
   const visibleActions = quickActions;
 
@@ -145,7 +165,9 @@ export const Dashboard = () => {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-[#1a1a1a]">{profile?.email || user?.email}</div>
-                  <div className="text-xs text-[#9e9e9e]">ID: {profile?.user_id || profile?.referral_code</div>
+                  <div className="text-xs text-[#9e9e9e]">
+  ID: {profile?.user_id || profile?.referral_code}
+</div>
                 </div>
               </div>
               
