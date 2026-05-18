@@ -328,7 +328,7 @@ export const AdminDashboard = () => {
               onClick={() => setActiveTab('withdrawals')}
               className={`px-6 py-3 rounded-2xl text-sm font-bold transition-all ${activeTab === 'withdrawals' ? 'bg-[#1a1a1a] text-white shadow-md' : 'text-[#9e9e9e] hover:bg-white hover:text-[#1a1a1a]'}`}
             >
-              Withdrawals Requests {pendingWithdrawals > 0 && <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">{pendingWithdrawals}</span>}
+              Withdrawals {pendingWithdrawals > 0 && <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">{pendingWithdrawals}</span>}
             </button>
             <button 
               onClick={() => setActiveTab('tasks')}
