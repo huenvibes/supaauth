@@ -499,7 +499,7 @@ export const AdminDashboard = () => {
               </thead>
               <tbody className="divide-y divide-[#f5f5f5]">
                 <AnimatePresence mode="popLayout">
-                  console.log('WITHDRAWALS DATA:', withdrawals);
+                  console.log(withdrawals);
                   {withdrawals.map((w) => (
                     <motion.tr 
                       layout
