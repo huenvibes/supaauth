@@ -15,8 +15,7 @@ export const Offerwall = () => {
 
   if (!user) return null;
 
-  const revtooUrl =
-    `https://revtoo.com/offerwall/tqn4bgj90i24acqrj36n39bp3l40g2/${user.id}`;
+  const revtooUrl = `https://revtoo.com/offerwall/tqn4bgj90i24acqrj36n39bp3l40g2/${user.id}`;
 
   const walls = [
     {
