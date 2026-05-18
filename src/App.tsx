@@ -10,7 +10,6 @@ import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { Dashboard } from './components/Dashboard';
 import { Withdrawals } from './components/Withdrawals';
-import { AdminDashboard } from './components/AdminDashboard';
 import { Offerwall } from './components/Offerwall';
 import { Referrals } from './components/Referrals';
 import { ProtectedRoute } from './components/ProtectedRoute';
@@ -35,14 +34,6 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <Withdrawals />
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/admin" 
-              element={
-                <ProtectedRoute>
-                  <AdminDashboard />
                 </ProtectedRoute>
               } 
             />
