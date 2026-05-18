@@ -154,7 +154,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const refreshProfile = useCallback(async () => {
     if (user) await fetchProfile(user.id, user.email);
   }, [user, fetchProfile]);
+const addBalance = async (amount: number) => {
+  if (!user || !profile) return;
 
+  const newBalance = profile.balance + amount;
+
+  const { error } = await supabase
+    .from('profiles')
+    .update({
+      balance: newBalance,
+    })
+    .eq('id', user.id);
+
+  if (!error) {
+    setProfile({
+      ...profile,
+      balance: newBalance,
+    });
+  }
+};
   const value = useMemo(() => ({
     user,
     profile,
@@ -162,6 +180,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     loading,
     signOut,
     refreshProfile,
+    addBalance,
   }), [user, profile, session, loading, signOut, refreshProfile]);
 
   if (!isSupabaseConfigured) {
