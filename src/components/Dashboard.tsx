@@ -47,10 +47,7 @@ export const Dashboard = () => {
     { title: 'History', icon: Terminal, desc: 'View earning history', path: '/history' },
   ];
 
-  const visibleActions = quickActions.filter(a => {
-    if (a.adminOnly) return profile?.is_admin;
-    return true;
-  });
+  const visibleActions = quickActions;
 
   return (
     <div className="space-y-8 pb-20">
