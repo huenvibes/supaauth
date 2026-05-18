@@ -299,7 +299,7 @@ export const AdminDashboard = () => {
         {[
           { label: 'Total Users', value: totalUsers, icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
           { label: 'Total Assets', value: `$${totalBalance.toLocaleString()}`, icon: TrendingUp, color: 'text-green-600', bg: 'bg-green-50' },
-          { label: 'Pending Payouts', value: pendingWithdrawals, icon: Clock, color: 'text-amber-600', bg: 'bg-amber-50' },
+          { label: 'Pending Withdrawals', value: pendingWithdrawals, icon: Clock, color: 'text-amber-600', bg: 'bg-amber-50' },
           { label: 'System Health', value: 'Prime', icon: Shield, color: 'text-purple-600', bg: 'bg-purple-50' },
         ].map((stat, i) => (
           <div key={stat.label} className="bg-white p-6 rounded-[28px] border border-[#e5e5e5] shadow-sm">
@@ -328,7 +328,7 @@ export const AdminDashboard = () => {
               onClick={() => setActiveTab('withdrawals')}
               className={`px-6 py-3 rounded-2xl text-sm font-bold transition-all ${activeTab === 'withdrawals' ? 'bg-[#1a1a1a] text-white shadow-md' : 'text-[#9e9e9e] hover:bg-white hover:text-[#1a1a1a]'}`}
             >
-              Payout Requests {pendingWithdrawals > 0 && <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">{pendingWithdrawals}</span>}
+              Withdrawals Requests {pendingWithdrawals > 0 && <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">{pendingWithdrawals}</span>}
             </button>
             <button 
               onClick={() => setActiveTab('tasks')}
